@@ -7,7 +7,6 @@
 #include <time.h>
 #include <stdbool.h>
 
-// Константи
 #define NUM_CARDS 52
 #define NUM_RANKS 13
 #define NUM_SUITS 4
@@ -16,7 +15,6 @@
 #define TURN_RIVER_SIZE 1
 #define MONTE_CARLO_SIMULATIONS 1000
 
-// Комбінації
 typedef enum {
     HIGH_CARD = 0,
     PAIR = 1,
@@ -30,7 +28,6 @@ typedef enum {
     ROYAL_FLUSH = 9
 } Combination;
 
-// Структури
 typedef struct {
     int rank;  // 2-14
     int suit;  // 0-3
@@ -49,12 +46,10 @@ typedef struct {
 extern "C" {
 #endif
 
-// Глобальні змінні
 extern Card deck[NUM_CARDS];
 extern const char *ranks[];
 extern const char *suits[];
 
-// Прототипи функцій
 void initialize_deck();
 void shuffle_deck();
 void deal_cards(Card *source_deck, int *current_card, Card *hand, int size);
@@ -70,5 +65,6 @@ const char* combination_name(Combination combo);
 #ifdef __cplusplus
 }
 #endif
+
 
 #endif
